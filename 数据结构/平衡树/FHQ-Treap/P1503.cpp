@@ -52,7 +52,7 @@ struct Treap {
         pull(u);
     }
     int merge(int x, int y) {
-        if(!x || !y) return x + y;
+        if(!x || !y) return x ^ y;
         if(key[x] > key[y]) {
             rs[x] = merge(rs[x], y);
             if(rs[x]) fa[rs[x]] = x;
